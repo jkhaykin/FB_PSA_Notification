@@ -22,7 +22,7 @@ def index():
             if any(word in fb_text for word in word_list.split()):
                 mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
                 message = {'text': fb_text,
-                    'from_email': jkhaykin@dailycal.org,
+                    'from_email': FROM_EMAIL,
                     'from_name': 'Daily Cal Alert',
                     'subject': 'Daily Cal Alert',
                     'to': [{'email': TO_EMAIL,
