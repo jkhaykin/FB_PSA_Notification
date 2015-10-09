@@ -1,0 +1,7 @@
+ACCESS_TOKEN = 'CAAKWZBb3om0IBALyzHhfxlhcoj5A1J4BRbkbY4XEuztZAu0nR8hryFXhyDjKcJl2YY5fh5OSvLqrSkRwXVMZBtYDSm2YVRIIFk9RQcIQqZC6qTYMxqEz0hBLvU8s2cBkRvPQ2XzKEoJDZAfZB6Cjg7JrwgyOlBBx1SKbnHxXh8bZCalZBkNTpqvw'
+
+FROM_EMAIL = 'jkhaykin@dailycal.org'
+
+MANDRILL_KEY = 'No69LvpEhHWKdVAhdQE_fQ'
+
+TO_EMAIL = 'facebook-notifications@dailycal.org'
