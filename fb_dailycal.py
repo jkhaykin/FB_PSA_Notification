@@ -10,7 +10,7 @@ manager = Manager(app)
 
 r = requests.get('https://graph.facebook.com/266259930135554/feed?access_token=' + os.environ['ACCESS_TOKEN'] + '&fields=message,likes.limit(500),created_time')
 json_data = r.json()['data']
-word_list = "arson assault blackmail burglary fraud hijacking kidnapping mugging mugger murderer robber shoplifter smuggler terrorist thief vandal appeal barrister caution cell community service court court case death penalty defense fine jail guilty imprisonment innocent judge jury justice lawyer offence sentence prison probation prosecution punishment corporal punishment remand home solicitor trial verdict witness arrest ban break burgle charge escape investigate rob steal armed burglar alarm illegal weapon gun knife incident accident homeless"
+word_list = "arson assault blackmail burglary fraud hijacking kidnapping mugging mugger murderer robber shoplifter smuggler terrorist thief vandal appeal barrister caution court death penalty defense fine jail guilty imprisonment innocent judge jury justice lawyer offence sentence prison probation prosecution punishment solicitor trial verdict witness arrest ban break burgle charge escape investigate rob steal armed burglar alarm legal illegal weapon gun knife incident accident homeless"
 
 @manager.command
 def index():
