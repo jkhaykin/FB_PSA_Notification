@@ -21,12 +21,12 @@ def index():
         if datetime.now().utcnow() <= p_time + timedelta(hours = 1):
             for word in word_list.split():
                 if word in fb_text:
-                    mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
+                    mandrill_client = mandrill.Mandrill(os.environ['MANDRILL_KEY'])
                     message = {'text': fb_text,
-                        'from_email': FROM_EMAIL,
+                        'from_email': os.environ['FROM_EMAIL'],
                         'from_name': 'Daily Cal Alert',
                         'subject': 'Daily Cal Alert',
-                        'to': [{'email': TO_EMAIL,
+                        'to': [{'email': os.environ['TO_EMAIL'],
                              'name': 'Daily Cal',
                              'type': 'to'}]}
                     result = mandrill_client.messages.send(message=message)
