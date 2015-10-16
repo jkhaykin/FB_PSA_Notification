@@ -14,7 +14,7 @@ r = requests.get('https://graph.facebook.com/266259930135554/feed?access_token='
 json_data = r.json()['data']
 
 # list of words to check for in Facebook posts
-word_list = ["gun", "knife", "chase", "homeless", "follow", "followed", "grope", "groped", "shoot", "PSA"]
+word_list = ["gun", "knife", "chase", "homeless", "follow", "followed", "grope", "groped", "shoot", "PSA", "steal"]
 
 @manager.command
 def index():
