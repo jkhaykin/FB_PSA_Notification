@@ -10,7 +10,7 @@ manager = Manager(app)
 
 r = requests.get('https://graph.facebook.com/266259930135554/feed?access_token=' + os.environ['ACCESS_TOKEN'] + '&fields=message,likes.limit(500),created_time')
 json_data = r.json()['data']
-word_list = "arson assault blackmail burglary fraud hijacking kidnapping mugging mugger murderer robber shoplifter smuggler terrorist thief vandal appeal barrister caution court death penalty defense fine jail guilty imprisonment innocent judge jury justice lawyer offence sentence prison probation prosecution punishment solicitor trial verdict witness arrest ban break burgle charge escape investigate rob steal armed burglar alarm legal illegal weapon gun knife incident accident homeless"
+word_list = ["gun", "knife", "chase", "homeless", "follow", "followed", "grope", "groped", "shoot", "PSA"]
 
 @manager.command
 def index():
@@ -19,7 +19,7 @@ def index():
         p_time = datetime.strptime(date_time[0] + date_time[1][:-5], "%Y-%m-%d%H:%M:%S")
         fb_text = json_data[i]['message']
         if datetime.now().utcnow() <= p_time + timedelta(hours = 1):
-            for word in word_list.split():
+            for word in word_list:
                 if word in fb_text:
                     mandrill_client = mandrill.Mandrill(os.environ['MANDRILL_KEY'])
                     message = {'text': fb_text,
